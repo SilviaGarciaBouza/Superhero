@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">SuperHero</string>
+    <string name="combat">Combat</string>
+    <string name="power">Power</string>
+    <string name="durability">Durability</string>
+    <string name="speed">Speed</string>
+    <string name="strength">Strength</string>
+    <string name="intelligence">Intelligence</string>
+    <string name="superman">Superman</string>
+    <string name="tom_s">Tomás</string>
+    <string name="dc_c_mics">DC cómics</string>
+</resources>
