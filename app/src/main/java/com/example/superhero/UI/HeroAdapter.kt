@@ -1,9 +1,10 @@
-package com.example.superhero
+package com.example.superhero.UI
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.ViewHolder
+import com.example.superhero.R
+import com.example.superhero.SuperheroItemResponse
 
 //Intent de MAinActivity a DetailSuperheroActivity:4 private val onItemSelected:(String)-> Unit) //string pq la id q se pasa es string
 class HeroAdapter(

@@ -7,6 +7,7 @@ import android.view.View
 import com.example.superhero.databinding.ActivityDetailSuperheroBinding
 import com.example.superhero.databinding.ActivityMainBinding
 import com.squareup.picasso.Picasso
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -15,7 +16,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-
+@AndroidEntryPoint
 class DetailSuperheroActivity : AppCompatActivity() {
     //Intent de MAinActivity a DetailSuperheroActivity:3
     companion object {

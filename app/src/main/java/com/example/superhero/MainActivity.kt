@@ -8,7 +8,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.superhero.DetailSuperheroActivity.Companion.EXTRA_ID
+import com.example.superhero.UI.HeroAdapter
 import com.example.superhero.databinding.ActivityMainBinding
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -18,9 +20,12 @@ import retrofit2.Retrofit
 import retrofit2.Response
 import retrofit2.converter.gson.GsonConverterFactory
 
+
+
+//TODO añadi el client y els service
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     private lateinit var adapterSuperhero: HeroAdapter
-    //var superheros: List<SuperheroItemResponse> = emptyList()
     //RETROFIT: Crea un elemento retrofit: 2
     private lateinit var retrofit: Retrofit
     private lateinit var binding: ActivityMainBinding
@@ -31,22 +36,21 @@ class MainActivity : AppCompatActivity() {
         //RETROFIT: Crea un elemento retrofit: 3
         retrofit = getRetrofit()
         initUI()
-        //    initRecyclerView()
-        //  observe()
     }
+
     //Intent de MAinActivity a DetailSuperheroActivity:1
     private fun navigateToDetailSuerheroActivity(id:String) {
         val intent = Intent(this, DetailSuperheroActivity::class.java)
         intent.putExtra(EXTRA_ID, id)
         startActivity(intent)
     }
+
     private fun initUI() {
         binding.svListSuperhero.setOnQueryTextListener(object : SearchView.OnQueryTextListener,
             androidx.appcompat.widget.SearchView.OnQueryTextListener {
             //fun q se llama al darle al botón de buscar
             override fun onQueryTextSubmit(query: String?): Boolean {
-                //Se llama a la fun q quieras
-                //En esta fun no lo qremos ? así q ponemos o empty
+                //Se llama a la fun q quieras.En esta fun no lo qremos ? así q ponemos o empty
                 searchSuperheroByName(query.orEmpty())
                 return false
             }
@@ -62,6 +66,7 @@ class MainActivity : AppCompatActivity() {
             LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         binding.rvSuperhero.adapter = adapterSuperhero
     }
+
     private fun searchSuperheroByName(query: String) {
         //se pone true o false. siempre se hacen en hilomppal
         binding.pbSuperhero.isVisible = true
@@ -85,7 +90,8 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-    //RETROFIT: Crea el retrofut
+
+    //RETROFIT: Crea el retrofut y el intercptor
     private fun getRetrofit(): Retrofit {
         val builder = OkHttpClient.Builder()
         val logging = HttpLoggingInterceptor()
@@ -101,6 +107,7 @@ class MainActivity : AppCompatActivity() {
             .build()
         return retrofit
     }
+
 }
 
 
