@@ -2,7 +2,7 @@ package com.example.superhero.UI
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
-import com.example.superhero.SuperheroItemResponse
+import com.example.superhero.data.SuperheroItemResponse
 import com.example.superhero.databinding.ItemHeroLayoutBinding
 import com.squareup.picasso.Picasso
 

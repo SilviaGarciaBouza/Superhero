@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import com.example.superhero.data.SuperHeroClient
+import com.example.superhero.data.SuperheroDataDetailResponse
 import com.example.superhero.databinding.ActivityDetailSuperheroBinding
 import com.example.superhero.databinding.ActivityMainBinding
 import com.squareup.picasso.Picasso
@@ -40,7 +42,7 @@ class DetailSuperheroActivity : AppCompatActivity() {
 
         CoroutineScope(Dispatchers.IO).launch {
             val myResponse: Response<SuperheroDataDetailResponse> =
-                retrofit.create(ApiService::class.java).getSuperheroDetail(id)
+                retrofit.create(SuperHeroClient::class.java).getSuperheroDetail(id)
             if (myResponse.isSuccessful) {
                val response: SuperheroDataDetailResponse? = myResponse.body()
                if (response != null) {

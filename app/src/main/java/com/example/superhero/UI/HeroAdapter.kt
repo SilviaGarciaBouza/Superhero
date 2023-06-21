@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.superhero.R
-import com.example.superhero.SuperheroItemResponse
+import com.example.superhero.data.SuperheroItemResponse
 
 //Intent de MAinActivity a DetailSuperheroActivity:4 private val onItemSelected:(String)-> Unit) //string pq la id q se pasa es string
 class HeroAdapter(

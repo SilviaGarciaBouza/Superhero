@@ -1,8 +1,15 @@
 package com.example.superhero.data
 
 import com.google.gson.annotations.SerializedName
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
+import retrofit2.Retrofit
+import javax.inject.Inject
 
-/*
+
+
+
+
 //AL buscar por name
 //@SerializedName("response") el response  y el resultses el nombre q tiene en el json.
 data class SuperheroDataResponse(
@@ -47,4 +54,4 @@ data class SuperheroBiographyResponse(
 )
 data class SuperheroAliasesResponse(
     @SerializedName("publisher") var publisherSuperheroDetail:String
-)*/
+)
